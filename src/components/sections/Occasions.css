@@ -1,0 +1,297 @@
+/* src/components/sections/Occasions.css */
+
+.occasions-section {
+  background-color: var(--color-off-white);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* SECTION HEADER */
+.occasions-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto var(--space-8) auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 1025px) {
+  .occasions-header {
+    margin-bottom: var(--space-10);
+  }
+}
+
+.occasions-eyebrow {
+  color: var(--color-gold);
+  margin-bottom: var(--space-4);
+  letter-spacing: 0.15em;
+}
+
+.occasions-headline {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-light);
+  line-height: var(--lh-heading);
+  color: var(--color-charcoal);
+  margin-bottom: var(--space-5);
+  letter-spacing: var(--ls-h2);
+}
+
+.occasions-copy {
+  font-size: var(--fs-body);
+  color: var(--text-secondary);
+  line-height: var(--lh-body);
+  font-weight: var(--fw-light);
+  margin: 0;
+}
+
+/* GRID LAYOUTS */
+.occasions-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  width: 100%;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .occasions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+
+  .tile-featured-wrapper {
+    grid-column: span 2;
+  }
+
+  .tile-grid-wrapper {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+}
+
+@media (min-width: 1025px) {
+  .occasions-grid {
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--space-8);
+  }
+
+  .tile-featured-wrapper {
+    grid-column: span 5;
+  }
+
+  .tile-grid-wrapper {
+    grid-column: span 7;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: var(--space-8);
+  }
+}
+
+/* OCCASION TILE STYLING */
+.occasion-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  border: 1px solid var(--color-border);
+  box-sizing: border-box;
+  transition: 
+    transform var(--transition-normal), 
+    box-shadow var(--transition-normal),
+    border-color var(--transition-normal);
+}
+
+.occasion-tile:hover {
+  transform: translateY(-6px);
+  border-color: rgba(197, 160, 89, 0.3);
+  box-shadow: var(--shadow-lg);
+}
+
+.occasion-tile:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 4px;
+}
+
+/* Heights across layout states */
+.tile-featured {
+  height: 380px;
+}
+
+.tile-medium {
+  height: 300px;
+}
+
+@media (min-width: 1025px) {
+  .tile-featured {
+    height: 560px; /* Perfectly aligns with two stacked medium tiles + grid gap */
+  }
+
+  .tile-medium {
+    height: 264px;
+  }
+}
+
+/* Image Placeholder & zoom effects */
+.occasion-image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.occasion-image-placeholder {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.occasion-zoom-effect {
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Gradient Shrouds */
+.occasion-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  transition: opacity var(--transition-normal);
+}
+
+/* Dark contrast overlay (for light text overlay tiles) */
+.text-light-overlay {
+  color: var(--color-off-white);
+}
+
+.text-light-overlay .occasion-title {
+  color: var(--color-off-white) !important;
+}
+
+.text-light-overlay .occasion-gradient-overlay {
+  background: linear-gradient(to bottom, rgba(21, 21, 21, 0) 35%, rgba(21, 21, 21, 0.7) 100%);
+}
+
+.text-light-overlay:hover .occasion-gradient-overlay {
+  background: linear-gradient(to bottom, rgba(21, 21, 21, 0) 30%, rgba(21, 21, 21, 0.8) 100%);
+}
+
+/* Light contrast overlay (for dark text overlay tiles) */
+.text-dark-overlay {
+  color: var(--color-charcoal);
+}
+
+.text-dark-overlay .occasion-title {
+  color: var(--color-charcoal) !important;
+}
+
+.text-dark-overlay .occasion-gradient-overlay {
+  background: linear-gradient(to bottom, rgba(247, 244, 239, 0) 35%, rgba(247, 244, 239, 0.95) 100%);
+}
+
+.text-dark-overlay:hover .occasion-gradient-overlay {
+  background: linear-gradient(to bottom, rgba(247, 244, 239, 0) 30%, rgba(247, 244, 239, 1) 100%);
+}
+
+/* Tile Content Overlays */
+.occasion-content {
+  position: relative;
+  z-index: 3;
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1025px) {
+  .tile-featured .occasion-content {
+    padding: var(--space-7); /* Generous padding on large featured tile */
+  }
+}
+
+.occasion-title {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-light);
+  margin-bottom: var(--space-2);
+  letter-spacing: 0.03em;
+}
+
+.occasion-description {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body-small);
+  line-height: 1.5;
+  font-weight: var(--fw-light);
+  max-width: 90%;
+  margin: 0;
+  opacity: 0.95;
+}
+
+.text-light-overlay .occasion-description {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.text-dark-overlay .occasion-description {
+  color: var(--text-secondary);
+}
+
+/* Elegant Understated CTA */
+.occasion-cta {
+  font-family: var(--font-sans);
+  font-size: var(--fs-button);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  margin-top: var(--space-3);
+  transition: color var(--transition-normal);
+}
+
+.text-light-overlay .occasion-cta {
+  color: var(--color-off-white);
+}
+
+.text-dark-overlay .occasion-cta {
+  color: var(--color-charcoal);
+}
+
+.occasion-tile:hover .occasion-cta {
+  color: var(--color-gold);
+}
+
+.cta-arrow {
+  display: inline-block;
+}
+
+/* SECTION CTA */
+.occasions-footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: var(--space-9);
+}
+
+@media (min-width: 1025px) {
+  .occasions-footer {
+    margin-top: var(--space-10);
+  }
+}
