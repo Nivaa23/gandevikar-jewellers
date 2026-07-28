@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Outer diamond contour -->
+  <path d="M8 6H24L30 13L16 28L2 13Z" stroke="#C9A227" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- Crown facets -->
+  <path d="M8 6L12 13M24 6L20 13M16 6L12 13M16 6L20 13M12 13H20" stroke="#C9A227" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- Pavilion facets -->
+  <path d="M12 13L16 28L20 13" stroke="#C9A227" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- Girdle lines -->
+  <path d="M2 13H12M20 13H30" stroke="#C9A227" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

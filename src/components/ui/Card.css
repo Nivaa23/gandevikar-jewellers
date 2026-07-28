@@ -1,0 +1,215 @@
+/* src/components/ui/Card.css */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-none);
+  overflow: hidden;
+  transition: 
+    border-color var(--transition-normal), 
+    box-shadow var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+}
+
+.card:hover {
+  border-color: var(--color-gold-hover);
+  box-shadow: var(--shadow-md);
+}
+
+.card-body {
+  padding: var(--card-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  background: var(--bg-card);
+}
+
+.card-title {
+  font-family: var(--font-serif);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-light);
+  color: var(--text-primary);
+  line-height: var(--lh-heading);
+}
+
+.card-subtitle {
+  font-size: var(--fs-label);
+  letter-spacing: var(--ls-wide);
+  color: var(--color-gold);
+}
+
+/* ==========================================================================
+   LUXURY PRODUCT CARD
+   ========================================================================== */
+.card-luxury-product {
+  border: 1px solid var(--color-beige);
+}
+
+.card-image-container {
+  aspect-ratio: 4 / 5;
+  width: 100%;
+  position: relative;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-badge {
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+  background-color: var(--color-ivory);
+  border: 1px solid var(--color-gold);
+  padding: var(--space-1) var(--space-3);
+  font-size: 0.65rem;
+  z-index: 10;
+}
+
+.card-price {
+  font-size: var(--fs-body-large);
+  color: var(--color-gold);
+  font-weight: var(--fw-medium);
+}
+
+/* ==========================================================================
+   FEATURE CARD
+   ========================================================================== */
+.card-feature {
+  background-color: var(--bg-card);
+  text-align: center;
+  align-items: center;
+}
+
+.card-feature .card-body {
+  align-items: center;
+}
+
+/* ==========================================================================
+   EDITORIAL CARD
+   ========================================================================== */
+.card-editorial {
+  border: none;
+  background-color: var(--color-beige);
+  box-shadow: none;
+}
+
+.card-editorial:hover {
+  box-shadow: var(--shadow-sm);
+  border-color: transparent;
+}
+
+.card-editorial-body {
+  background: transparent;
+  padding: calc(var(--card-padding) * 1.5);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 280px;
+}
+
+.card-link {
+  font-size: var(--fs-label);
+  letter-spacing: var(--ls-button);
+  color: var(--color-charcoal);
+  border-bottom: 1px solid var(--color-gold);
+  padding-bottom: 2px;
+  margin-top: var(--space-4);
+  cursor: pointer;
+  transition: color var(--transition-normal);
+}
+
+.card-link:hover {
+  color: var(--color-gold-hover);
+}
+
+/* ==========================================================================
+   GLASS CARD (backdrop-filter)
+   ========================================================================== */
+.card-glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
+  box-shadow: var(--glass-shadow);
+}
+
+.card-glass:hover {
+  border-color: var(--color-gold-light);
+  box-shadow: var(--shadow-md);
+}
+
+.card-glass-body {
+  background: transparent;
+}
+
+/* ==========================================================================
+   IMAGE OVERLAY CARD
+   ========================================================================== */
+.card-image-overlay-wrapper {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  width: 100%;
+}
+
+.card-image-full {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-image-overlay-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(21, 21, 21, 0.1) 0%, rgba(21, 21, 21, 0.8) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--card-padding);
+  color: var(--color-off-white);
+  gap: var(--space-2);
+}
+
+.text-gold-accent {
+  color: var(--color-gold) !important;
+}
+
+.text-light {
+  color: var(--color-off-white) !important;
+}
+
+/* ==========================================================================
+   INFORMATION CARD
+   ========================================================================== */
+.card-info {
+  background-color: var(--bg-card);
+}
+
+.card-info-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.card-info-header {
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-3);
+}
+
+.card-info-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-size: var(--fs-small);
+  color: var(--text-secondary);
+}

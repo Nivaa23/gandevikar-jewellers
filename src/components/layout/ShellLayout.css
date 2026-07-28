@@ -1,0 +1,54 @@
+/* src/components/layout/ShellLayout.css */
+
+.shell-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+}
+
+.shell-main {
+  flex: 1 0 auto;
+  width: 100%;
+}
+
+/* ==========================================================================
+   MINIMAL LUXURY FOOTER STYLING
+   ========================================================================== */
+.shell-footer {
+  background-color: var(--color-charcoal);
+  color: var(--color-ivory);
+  border-top: 1px solid rgba(197, 160, 89, 0.15); /* Muted gold border top */
+  padding: var(--space-8) 0;
+  flex-shrink: 0;
+}
+
+.shell-footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  text-align: center;
+}
+
+.shell-footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.shell-footer-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
+  font-weight: var(--fw-light);
+  color: var(--color-ivory);
+}
+
+.shell-footer-copy {
+  font-family: var(--font-sans);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-light);
+  letter-spacing: 0.05em;
+  color: #8C867F; /* Lighter charcoal body text */
+}

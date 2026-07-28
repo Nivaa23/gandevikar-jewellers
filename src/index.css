@@ -1,0 +1,204 @@
+/* src/index.css */
+@import './styles/variables.css';
+
+/* ==========================================================================
+   RESET & BASE STYLES
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: var(--lh-body);
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  background-color: var(--bg-primary);
+}
+
+/* ==========================================================================
+   ACCESSIBILITY & KEYBOARD NAVIGATION
+   ========================================================================== */
+/* Visible premium focus state */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 4px;
+}
+
+/* Screen reader only utility class */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY SYSTEM
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6, .display-serif {
+  font-family: var(--font-serif);
+  font-weight: var(--fw-light);
+  line-height: var(--lh-heading);
+  color: var(--text-primary);
+  letter-spacing: var(--ls-h1);
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+  letter-spacing: var(--ls-h2);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+  letter-spacing: var(--ls-h3);
+}
+
+h4 {
+  font-size: var(--fs-h4);
+}
+
+p, .body-copy {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-light);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--text-secondary);
+}
+
+.body-large {
+  font-size: var(--fs-body-large);
+  line-height: var(--lh-relaxed);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Spaced out small labels */
+.label-caps {
+  font-family: var(--font-sans);
+  font-size: var(--fs-label);
+  font-weight: var(--fw-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+  color: var(--color-gold);
+}
+
+/* ==========================================================================
+   LAYOUT SYSTEM (12-column grid & Flexbox containers)
+   ========================================================================== */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding-x);
+  padding-right: var(--container-padding-x);
+}
+
+/* Standard Responsive Grid */
+.grid-system {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--grid-gap);
+}
+
+@media (min-width: 768px) {
+  .grid-system {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+@media (min-width: 1025px) {
+  .grid-system {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+/* Responsive Image Container */
+.img-luxury-wrapper {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-beige);
+}
+
+.img-luxury-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-ivory);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-champagne);
+  border-radius: var(--radius-none);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
+
+/* ==========================================================================
+   GLOBAL SECTION SPACING (72-96px mobile, 96-120px tablet, 120-160px desktop)
+   ========================================================================== */
+.section-padding-y {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+@media (min-width: 768px) {
+  .section-padding-y {
+    padding-top: 110px;
+    padding-bottom: 110px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .section-padding-y {
+    padding-top: 140px;
+    padding-bottom: 140px;
+  }
+}
