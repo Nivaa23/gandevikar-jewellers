@@ -33,9 +33,37 @@ export const Navbar = () => {
 
           {/* Logo / Brand Name */}
           <a href="/" className="navbar-brand-link" aria-label="Gandevikar Jewellers Home">
-            <span className="navbar-brand-title">Gandevikar</span>
-            <span className="navbar-brand-subtitle">Jewellers</span>
-            <span className="navbar-brand-est">EST. 1927</span>
+            <div className="navbar-brand-logo-container">
+              <svg className="navbar-brand-emblem" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                {/* Outer ring */}
+                <circle cx="50" cy="50" r="46" stroke="#8B1E2D" strokeWidth="2.5" />
+                {/* Inner decorative dotted ring */}
+                <circle cx="50" cy="50" r="38" stroke="#8B1E2D" strokeWidth="1" strokeDasharray="3 2" />
+                
+                {/* Text Path for circular text inside emblem */}
+                <path id="emblem-text-path" d="M 50,50 m -30,0 a 30,30 0 1,1 60,0 a 30,30 0 1,1 -60,0" fill="none" />
+                <text fill="#8B1E2D" fontSize="6.2" fontWeight="700" fontFamily="var(--font-sans)" letterSpacing="0.04em">
+                  <textPath href="#emblem-text-path" startOffset="0%">
+                    GANDEVIKAR JEWELLERS PVT. LTD. • ESTD. 1927 •
+                  </textPath>
+                </text>
+                
+                {/* Center Monogram */}
+                <text x="50" y="56" textAnchor="middle" fill="#8B1E2D" fontSize="18" fontWeight="700" fontFamily="var(--font-serif)">
+                  GJ
+                </text>
+              </svg>
+              
+              <div className="navbar-brand-text-col">
+                <span className="navbar-brand-title">Gandevikar</span>
+                <span className="navbar-brand-subtitle">Jewellers Pvt. Ltd.</span>
+                <div className="navbar-brand-meta">
+                  <span className="navbar-brand-loc">Chikuwadi</span>
+                  <span className="navbar-brand-divider">•</span>
+                  <span className="navbar-brand-est">Trusted Since 1927</span>
+                </div>
+              </div>
+            </div>
           </a>
 
           {/* Desktop Navigation Links */}

@@ -31,18 +31,110 @@
   text-align: center;
 }
 
-.shell-footer-brand {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
+.shell-footer-brand-badge {
+  background-color: var(--color-ivory);
+  border: 1px solid rgba(197, 160, 89, 0.35); /* Subtle gold frame */
+  border-radius: var(--radius-sm);
+  padding: var(--space-4) var(--space-6);
+  box-shadow: var(--shadow-md);
+  display: inline-block;
+  margin-bottom: var(--space-2);
 }
 
-.shell-footer-title {
+.footer-brand-logo-container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.footer-brand-emblem {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.footer-brand-text-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.footer-brand-title {
   font-family: var(--font-serif);
-  font-size: 1.1rem;
-  letter-spacing: 0.2em;
-  font-weight: var(--fw-light);
-  color: var(--color-ivory);
+  font-size: 1.35rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700; /* Bolder weight */
+  line-height: 0.9;
+  color: #8B1E2D;
+}
+
+.footer-brand-subtitle {
+  font-family: var(--font-serif);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700; /* Bolder weight */
+  margin-top: 1px;
+  color: #8B1E2D;
+}
+
+.footer-brand-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: 2px;
+}
+
+.footer-brand-loc {
+  font-family: var(--font-sans);
+  font-size: 0.5rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700; /* Bolder weight */
+  color: #8B1E2D;
+}
+
+.footer-brand-divider {
+  font-size: 0.5rem;
+  color: #8B1E2D;
+  font-weight: 700;
+}
+
+.footer-brand-est {
+  font-family: var(--font-sans);
+  font-size: 0.5rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700; /* Bolder weight */
+  color: #8B1E2D;
+}
+
+/* Mobile responsive scaling for footer brand */
+@media (max-width: 480px) {
+  .shell-footer-brand-badge {
+    padding: var(--space-3) var(--space-4);
+  }
+  .footer-brand-emblem {
+    width: 40px;
+    height: 40px;
+  }
+  .footer-brand-logo-container {
+    gap: var(--space-2);
+  }
+  .footer-brand-title {
+    font-size: 1.15rem;
+  }
+  .footer-brand-subtitle {
+    font-size: 0.55rem;
+  }
+  .footer-brand-loc,
+  .footer-brand-est,
+  .footer-brand-divider {
+    font-size: 0.45rem;
+  }
 }
 
 .shell-footer-copy {

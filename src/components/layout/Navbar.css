@@ -47,39 +47,102 @@
    ========================================================================== */
 .navbar-brand-link {
   display: flex;
-  flex-direction: column;
   align-items: center;
   text-decoration: none;
-  color: var(--color-charcoal);
-  text-align: center;
+  color: #8B1E2D; /* Enforce official brand maroon */
+}
+
+.navbar-brand-logo-container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.navbar-brand-emblem {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.navbar-brand-text-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .navbar-brand-title {
   font-family: var(--font-serif);
-  font-size: 1.5rem;
-  letter-spacing: 0.12em;
+  font-size: 1.35rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-weight: var(--fw-light);
-  line-height: 0.95;
+  font-weight: 700; /* Bolder weight */
+  line-height: 0.9;
+  color: #8B1E2D;
 }
 
 .navbar-brand-subtitle {
   font-family: var(--font-serif);
-  font-size: 0.8rem;
-  letter-spacing: 0.28em;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  font-weight: var(--fw-light);
+  font-weight: 700; /* Bolder weight */
+  margin-top: 1px;
+  color: #8B1E2D;
+}
+
+.navbar-brand-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
   margin-top: 2px;
-  color: var(--color-gold);
+}
+
+.navbar-brand-loc {
+  font-family: var(--font-sans);
+  font-size: 0.5rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700; /* Bolder weight */
+  color: #8B1E2D;
+}
+
+.navbar-brand-divider {
+  font-size: 0.5rem;
+  color: #8B1E2D;
+  font-weight: 700;
 }
 
 .navbar-brand-est {
   font-family: var(--font-sans);
-  font-size: 0.55rem;
-  letter-spacing: 0.2em;
-  font-weight: var(--fw-regular);
-  margin-top: 1px;
-  color: var(--text-muted);
+  font-size: 0.5rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700; /* Bolder weight */
+  color: #8B1E2D;
+}
+
+/* Mobile responsive scaling for navbar brand */
+@media (max-width: 480px) {
+  .navbar-brand-emblem {
+    width: 40px;
+    height: 40px;
+  }
+  .navbar-brand-logo-container {
+    gap: var(--space-2);
+  }
+  .navbar-brand-title {
+    font-size: 1.15rem;
+  }
+  .navbar-brand-subtitle {
+    font-size: 0.55rem;
+  }
+  .navbar-brand-loc,
+  .navbar-brand-est,
+  .navbar-brand-divider {
+    font-size: 0.45rem;
+  }
 }
 
 /* ==========================================================================
