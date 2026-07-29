@@ -10,10 +10,16 @@
 .ourworld-header {
   text-align: center;
   max-width: 680px;
-  margin: 0 auto var(--space-8) auto;
+  margin: 0 auto var(--space-6) auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media (min-width: 768px) {
+  .ourworld-header {
+    margin-bottom: var(--space-8);
+  }
 }
 
 @media (min-width: 1025px) {
@@ -246,7 +252,13 @@
   align-items: center;
   text-align: center;
   max-width: 580px;
-  margin: var(--space-8) auto 0 auto;
+  margin: var(--space-6) auto 0 auto;
+}
+
+@media (min-width: 768px) {
+  .ourworld-footer {
+    margin-top: var(--space-8);
+  }
 }
 
 @media (min-width: 1025px) {

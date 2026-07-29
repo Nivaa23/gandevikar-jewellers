@@ -267,23 +267,54 @@
    ========================================================================== */
 .navbar-mobile-drawer {
   position: fixed;
-  top: 96px; /* Match navbar transparent height */
   left: 0;
   width: 100%;
-  height: calc(100vh - 96px);
-  height: calc(100dvh - 96px);
   background-color: var(--color-ivory);
   border-bottom: 1px solid var(--color-border);
   z-index: 299;
   padding: var(--space-8) var(--space-6);
   box-shadow: var(--shadow-lg);
   overflow-y: auto;
+  box-sizing: border-box;
 }
 
-.navbar-scrolled ~ .navbar-mobile-drawer {
-  top: 80px; /* Match scrolled navbar height */
+.navbar-mobile-drawer.drawer-transparent {
+  top: 96px;
+  height: calc(100vh - 96px);
+  height: calc(100dvh - 96px);
+}
+
+.navbar-mobile-drawer.drawer-scrolled {
+  top: 80px;
   height: calc(100vh - 80px);
   height: calc(100dvh - 80px);
+}
+
+/* Mobile responsive navbar heights and drawer offsets */
+@media (max-width: 767px) {
+  .navbar-transparent {
+    height: 80px;
+  }
+  
+  .navbar-scrolled {
+    height: 64px;
+  }
+
+  .navbar-mobile-drawer.drawer-transparent {
+    top: 80px;
+    height: calc(100vh - 80px);
+    height: calc(100dvh - 80px);
+  }
+
+  .navbar-mobile-drawer.drawer-scrolled {
+    top: 64px;
+    height: calc(100vh - 64px);
+    height: calc(100dvh - 64px);
+  }
+
+  .navbar-action-btn {
+    padding: var(--space-3); /* Increase touch target area on mobile */
+  }
 }
 
 .navbar-mobile-nav {

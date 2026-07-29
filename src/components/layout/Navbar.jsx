@@ -99,7 +99,7 @@ export const Navbar = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div 
-            className="navbar-mobile-drawer"
+            className={`navbar-mobile-drawer ${isScrolled ? 'drawer-scrolled' : 'drawer-transparent'}`}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}

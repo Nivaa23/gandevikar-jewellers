@@ -2,25 +2,30 @@
 
 .hero-section {
   position: relative;
-  min-height: 100vh;
+  min-height: auto;
+  /* Auto height on mobile/tablet for content fitting */
   display: flex;
   align-items: center;
   /* Premium radial gradient (Warm Ivory center to Soft Champagne edges) */
   background: radial-gradient(circle at 30% 30%, var(--color-ivory) 0%, var(--color-champagne) 100%);
-  padding-top: 110px; /* Accounts for fixed navbar */
-  padding-bottom: 80px;
+  padding-top: 110px;
+  /* Accounts for fixed navbar */
+  padding-bottom: var(--space-8);
   overflow: hidden;
   box-sizing: border-box;
 }
 
 @media (min-width: 768px) {
   .hero-section {
+    padding-top: 120px;
     padding-bottom: 110px;
   }
 }
 
 @media (min-width: 1025px) {
   .hero-section {
+    min-height: 100vh;
+    padding-top: 110px;
     padding-bottom: 140px;
   }
 }
@@ -28,9 +33,21 @@
 .hero-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: var(--space-8);
+  gap: var(--space-6);
   align-items: center;
   width: 100%;
+}
+
+@media (min-width: 768px) {
+  .hero-grid {
+    gap: var(--space-7);
+  }
+}
+
+@media (min-width: 1025px) {
+  .hero-grid {
+    gap: var(--space-5);
+  }
 }
 
 /* ==========================================================================
@@ -60,31 +77,50 @@
   font-family: var(--font-serif);
   font-size: var(--fs-display);
   font-weight: var(--fw-light);
-  line-height: var(--lh-heading);
+  line-height: 1.15;
   color: var(--color-charcoal);
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-4);
   letter-spacing: var(--ls-display);
+}
+
+@media (max-width: 767px) {
+  .hero-headline {
+    font-size: clamp(2rem, 8vw, 2.75rem);
+    line-height: 1.2;
+  }
 }
 
 .hero-copy {
   color: var(--color-bronze);
   max-width: 520px;
-  margin-bottom: var(--space-7);
+  margin-bottom: var(--space-6);
   font-weight: var(--fw-light);
+}
+
+@media (min-width: 768px) {
+  .hero-copy {
+    margin-bottom: var(--space-7);
+  }
 }
 
 .hero-actions-wrapper {
   display: flex;
   flex-direction: column;
-  gap: var(--space-7);
+  gap: var(--space-5);
   width: 100%;
   max-width: 520px;
+}
+
+@media (min-width: 768px) {
+  .hero-actions-wrapper {
+    gap: var(--space-6);
+  }
 }
 
 .hero-buttons {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-3);
   width: 100%;
 }
 
@@ -92,13 +128,27 @@
   width: 100%;
 }
 
+@media (min-width: 480px) {
+  .hero-buttons {
+    flex-direction: row;
+    gap: var(--space-4);
+  }
+
+  .hero-buttons .btn {
+    width: auto;
+    flex: 1;
+  }
+}
+
 @media (min-width: 768px) {
   .hero-buttons {
     flex-direction: row;
     gap: var(--space-4);
   }
+
   .hero-buttons .btn {
     width: auto;
+    flex: none;
   }
 }
 
@@ -112,7 +162,7 @@
   padding-top: var(--space-5);
 }
 
-@media (min-width: 600px) {
+@media (min-width: 480px) {
   .hero-trust-badges {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-4);
@@ -147,8 +197,16 @@
   grid-column: span 12;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: var(--space-4);
+  justify-content: flex-start;
+  /* Align left to match left-aligned content on stack */
+  padding: 0;
+  margin-top: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .hero-showcase {
+    margin-top: var(--space-6);
+  }
 }
 
 @media (min-width: 1025px) {
@@ -156,6 +214,7 @@
     grid-column: span 6;
     justify-content: flex-end;
     padding: 0;
+    margin-top: 0;
   }
 }
 
@@ -163,16 +222,24 @@
   position: relative;
   width: 100%;
   max-width: 500px;
-  aspect-ratio: 16 / 11; /* Wide/landscape on mobile to prevent cropping */
+  aspect-ratio: 16 / 11;
+  /* Wide/landscape on mobile to prevent cropping */
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--color-border-light);
   background-color: var(--color-champagne);
 }
 
+@media (min-width: 768px) {
+  .hero-image-wrapper {
+    aspect-ratio: 16 / 10;
+  }
+}
+
 @media (min-width: 1025px) {
   .hero-image-wrapper {
-    max-width: 480px;
-    aspect-ratio: 4 / 5; /* Elegant portrait on desktop */
+    max-width: 460px;
+    aspect-ratio: 9 / 16;
+    /* Elegant portrait on desktop */
   }
 }
 
@@ -180,7 +247,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center top;
   display: block;
 }
 
@@ -212,7 +279,8 @@
 
 @media (max-width: 768px) {
   .hero-scroll-indicator {
-    display: none; /* Hide on smaller screens to maximize space */
+    display: none;
+    /* Hide on smaller screens to maximize space */
   }
 }
 
